@@ -1,4 +1,9 @@
 // Assignment code here
+function generatePassword(){
+  prompt('Hello there');
+}
+
+
 
 
 // Get references to the #generate element
