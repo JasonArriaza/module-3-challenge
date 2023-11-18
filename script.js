@@ -1,5 +1,6 @@
 // Assignment code here
 
+
 function generatePassword(){
   var lowerCaseValue = window.confirm('Would you like to add lowercase letters to you password?');
   var upperCaseValue = window.confirm('Would you like to add uppercase letters to your password?');
@@ -9,25 +10,25 @@ function generatePassword(){
 }
 
 //generate the lowercase letters
-function generateLowerCase(lowerCaseValue){
+function generateLowerCase(){
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
-// console.log(generateLowerCase());
+console.log(generateLowerCase());
 //generate the uppercase letters
-function generateUpperCase(upperCaseValue){
+function generateUpperCase(){
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
-// console.log(generateUpperCase());
+console.log(generateUpperCase());
 //generate the numbers
-function generateNumbers(numbersValue){
+function generateNumbers(){
   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
-// console.log(generateNumbers());
+console.log(generateNumbers());
 //generate the symbols
-function generateSymbols(symbolsValue){
+function generateSymbols(){
   return String.fromCharCode(Math.floor(Math.random() * 15) + 33);
 }
-// console.log(generateSymbols());
+console.log(generateSymbols());
 //Hava a limit for the password
 
 
