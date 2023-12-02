@@ -15,6 +15,11 @@ function generatePassword() {
   var symbolsValue = window.confirm('Would you like to add symbols to your password?');
   var lengthValue = prompt('How long would you like your password to be (Must be in between 8-128 characters)');
 
+  if (!(lowerCaseValue || upperCaseValue || numberValue || symbolsValue)) {
+    alert('You need to say "Yes" to at least one prompt. Please try again.');
+    return null; // Return null to indicate no password was generated
+  }
+
   // Validate the length input
   var passwordLength = parseInt(lengthValue);
 
