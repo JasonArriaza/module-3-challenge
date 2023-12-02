@@ -1,36 +1,71 @@
 // Assignment code here
 
+// Prompt the user for the password criteria
+// - password length of 8 < 128
+// lowercase, uppercase, numbers, and special characters
+// validate the input
+// generate the password
+// display the password
 
-function generatePassword(){
-  var lowerCaseValue = window.confirm('Would you like to add lowercase letters to you password?');
+// Function to prompt user for password criteria
+function generatePassword() {
+  var lowerCaseValue = window.confirm('Would you like to add lowercase letters to your password?');
   var upperCaseValue = window.confirm('Would you like to add uppercase letters to your password?');
   var numberValue = window.confirm('Would you like to add numbers to your password?');
   var symbolsValue = window.confirm('Would you like to add symbols to your password?');
   var lengthValue = prompt('How long would you like your password to be (Must be in between 8-128 characters)');
+
+  // Validate the length input
+  var passwordLength = parseInt(lengthValue);
+
+  while (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+    alert('Please enter a valid length between 8 and 128 characters.');
+    lengthValue = prompt('How long would you like your password to be (Must be in between 8-128 characters)');
+    passwordLength = parseInt(lengthValue);
+  }
+
+  // Generate password based on selected criteria
+  var password = '';
+  while (password.length < passwordLength) {
+    if (lowerCaseValue) {
+      password += generateLowerCase();
+    }
+    if (upperCaseValue) {
+      password += generateUpperCase();
+    }
+    if (numberValue) {
+      password += generateNumbers();
+    }
+    if (symbolsValue) {
+      password += generateSymbols();
+    }
+  }
+
+  // Trim the password to the desired length
+  password = password.slice(0, passwordLength);
+
+  return password;
 }
 
-//generate the lowercase letters
-function generateLowerCase(){
+// Function to generate lowercase letters
+function generateLowerCase() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
-console.log(generateLowerCase());
-//generate the uppercase letters
-function generateUpperCase(){
+
+// Function to generate uppercase letters
+function generateUpperCase() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
-console.log(generateUpperCase());
-//generate the numbers
-function generateNumbers(){
+
+// Function to generate numbers
+function generateNumbers() {
   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
-console.log(generateNumbers());
-//generate the symbols
-function generateSymbols(){
+
+// Function to generate symbols
+function generateSymbols() {
   return String.fromCharCode(Math.floor(Math.random() * 15) + 33);
 }
-console.log(generateSymbols());
-//Hava a limit for the password
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -41,7 +76,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
