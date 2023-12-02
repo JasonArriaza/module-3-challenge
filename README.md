@@ -14,4 +14,6 @@
 ##THEN a password is generated that matches the selected criteria
 ##WHEN the password is generated
 ##THEN the password is either displayed in an alert or written to the page
+
+The user can now construct a password for themselves and can set their own parameters on what the password can be
 ![image](https://github.com/JasonArriaza/module-3-challenge/assets/98302556/b8982a52-12c2-4f70-bdec-90404bbc2e81)
