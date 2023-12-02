@@ -14,4 +14,4 @@
 ##THEN a password is generated that matches the selected criteria
 ##WHEN the password is generated
 ##THEN the password is either displayed in an alert or written to the page
-![image](https://github.com/JasonArriaza/module-3-challenge/assets/98302556/5309622e-2a62-49cb-be6d-81f2b0baaec4)
+![image](https://github.com/JasonArriaza/module-3-challenge/assets/98302556/b8982a52-12c2-4f70-bdec-90404bbc2e81)
